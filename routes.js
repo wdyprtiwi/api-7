@@ -52,14 +52,14 @@ routes.post(
             }),
         body('password')
             .trim()
-            .isLength({ min: 4 })
-            .withMessage('Password must be at least 4 characters long'),
+            .isLength({ min: 8 })
+            .withMessage('Password must be at least 8 characters long'),
     ],
     validate,
     controller.signup
 );
 
-// Login user through email and password
+// Login user with email and password
 routes.post(
     '/login',
     [
@@ -73,7 +73,7 @@ routes.post(
                 req.body.user = isExist[0];
                 return true;
             }),
-        body('password', 'Incorrect Password').trim().isLength({ min: 4 }),
+        body('password', 'Incorrect Password').trim().isLength({ min: 8 }),
     ],
     validate,
     controller.login
@@ -88,6 +88,20 @@ routes.get(
     tokenValidation(true),
     validate,
     controller.refreshToken
+);
+
+// Report link from user
+routes.post(
+    '/report-link',
+    [
+        body('link')
+            .trim()
+            .not()
+            .isEmpty()
+            .withMessage('Link must not be empty'),
+    ],
+    validate,
+    controller.reportLink
 );
 
 export default routes;

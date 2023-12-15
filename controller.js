@@ -170,4 +170,24 @@ export default {
             next(err);
         }
     },
+
+    reportLink: async (req, res, next) => {
+        try {
+            const { link } = matchedData(req);
+
+            // Store report link in database
+            const [result] = await DB.execute(
+                'INSERT INTO `links` (`link`) VALUES (?)',
+                [link]
+            );
+            res.status(201).json({
+                status: 201,
+                error: false,
+                message: 'Report link successful',
+                link_id: result.insertId,
+            });
+        } catch (err) {
+            next(err);
+        }
+    },
 };

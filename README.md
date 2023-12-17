@@ -6,6 +6,7 @@ Backend for API auth regsitration, login, report link using express, nodejs, and
 Endpoint
 --
 https://app-aqzbqeztja-et.a.run.app/
+Update: https://app-5hl7lkua7q-uc.a.run.app
 
 Register
 --

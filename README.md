@@ -50,3 +50,23 @@ Login
         "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzAyNTYzMzYwLCJleHAiOjE3MDI1NjQ1NjB9.veBthI2tu94P3EytZtUhi-dDk6KhihCSNp3ZuZok598",
         "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzAyNTYzMzYwLCJleHAiOjE3MDI2NDk3NjB9.i-vnRmZX4QNzHUyXOePbvWfY6svSoAVv8uF5gXyD0wM"
     }
+
+Report Link
+--
+
+### URL
+    /api/report-link
+
+### Method
+    POST
+
+### Request Body
+    - link as string
+
+### Response
+    {
+    "status": 201,
+    "error": false,
+    "message": "Report link successful",
+    "link_id": 1
+    }

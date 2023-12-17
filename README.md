@@ -61,7 +61,7 @@ Report Link
     POST
 
 ### Request Body
-    - link as string
+- link as string
 
 ### Response
     {
